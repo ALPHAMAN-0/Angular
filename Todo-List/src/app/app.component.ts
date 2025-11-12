@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
-// Declare jQuery to avoid TypeScript errors
+
 declare var $: any;
 
 @Component({
@@ -11,23 +11,15 @@ declare var $: any;
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
+
+//this is call propertys
 export class AppComponent {
   title = 'Todo-List';
-  
+  name = 'Todo List Application';
+  //this think is time when i run load it it show first todo list after 2 secound it show siam hossain
   constructor(){
     setTimeout(() => {
-      this.title = "title change to siam"
+      this.title = "SIAM Hossain"
     }, 2000);
-  }
-
-  // Example method using jQuery
-  ngAfterViewInit() {
-    // Example: Change background color using jQuery
-    $('body').css('background-color', '#f8f9fa');
-    
-    // Example: Add click event to any button with class 'jquery-btn'
-    $('.jquery-btn').click(function(this: any) {
-      $(this).fadeOut().fadeIn();
-    });
   }
 }
