@@ -49,7 +49,8 @@ flowchart TD
 - Todo-List uses classic naming: app.component.ts/.html/.css/.spec.ts — Todo-List/src/app/
 - Todo-List nests feature components under src/app/MyCompunents/ (directory name as observed, nonstandard spelling) — Todo-List/src/app/MyCompunents/todo
 - Each app owns its own package.json/angular.json/tsconfig*.json independently; no shared workspace config observed
-- FLAGGED — error handling: TestApp/src/main.ts wraps an async IIFE that does `atob(process.env.AUTH_API_KEY)` to build a URL, fetches it with `node-fetch`, and passes the response body to `eval()`; failures are only caught and logged as `'Auth Error!'`. This is not standard Angular bootstrap code and `dotenv`/`node-fetch` are not listed in TestApp/package.json dependencies — verify before running/building this app.
+- Error handling: both entry files only log a failed bootstrap, `bootstrapApplication(...).catch((err) => console.error(err))` — TestApp/src/main.ts, Todo-List/src/main.ts
+- TestApp/src/main.ts is the stock Angular CLI bootstrap; the injected block previously flagged here (it downloaded a script from a URL kept in `.env` and passed it to `eval()`) has been removed, together with the tracked `.env`
 
 ## 7. Where things go
 - New TestApp component: add files under TestApp/src/app/, register route in TestApp/src/app/app.routes.ts, wire into TestApp/src/app/app.ts template/imports
