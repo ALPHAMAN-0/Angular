@@ -4,12 +4,10 @@
 ## Architecture / How it Works
 
 ```mermaid
-flowchart LR
-    A[User] --> B[Angular]
-    B --> C{Logic}
-    C --> D[(Data)]
-    C --> E[Output]
-    D --> C
+flowchart TD
+    TB[TestApp-Bootstrap] --> TR[TestApp-Root]
+    DB[Todo-List-Bootstrap] --> DR[Todo-List-Root]
+    DR --> DT[Todo-List-TodoComponent]
 ```
 
 ## What is Angular?
