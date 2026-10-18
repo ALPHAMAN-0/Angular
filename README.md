@@ -1,5 +1,17 @@
 # Angular
 
+
+## Architecture / How it Works
+
+```mermaid
+flowchart LR
+    A[User] --> B[Angular]
+    B --> C{Logic}
+    C --> D[(Data)]
+    C --> E[Output]
+    D --> C
+```
+
 ## What is Angular?
 
 Angular is a **JavaScript/TypeScript framework** for web development that enables the creation of **Single Page Applications (SPAs)**. Developed by **Google**, Angular is a powerful, feature-rich framework that follows the **MVC (Model-View-Controller) architecture**.
